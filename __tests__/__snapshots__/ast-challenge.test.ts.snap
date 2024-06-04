@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`code-challenge 1`] = `
+"export interface useCustomQuery<TData> extends ReactQueryParams<customResponse, TData> {
+  request?: customRequest;
+}
+
+const customHook = <TData = customResponse,>({
+  request,
+  options
+}: useCustomQuery<TData>) => {
+  return useQuery<customResponse, Error, TData>([\\"customQuery\\", request], () => {
+    if (!customService) throw new Error(\\"Query Service not initialized\\");
+    return customService.customMethod(request);
+  }, options);
+};"
+`;
